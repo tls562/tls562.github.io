@@ -88,7 +88,7 @@ workManager 작업 유형 3가지
 - 지연 가능: 나중에 시작하며 주기적으로 실행될 수 있는 예약된 작업입니다.
 
 <p align="center">
-<img src="/assets/jetpack_workmanager_1.jpg">  
+<img src="/assets/jetpack_workmanager.jpg">  
 </p>
 
 유연한 재시도 정책  
