@@ -9,7 +9,6 @@ tags:
   - workManager
   - dataSync
 ---
-# Android Jetpack WorkManager
 
 올해 4월에 WorkManager가 릴리즈 되었다.  
 
