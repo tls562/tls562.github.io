@@ -1,4 +1,5 @@
 ---
+published: true
 title: "Wearable API statusCode=API_UNAVAILABLE error"
 categories:
   - android
