@@ -92,4 +92,30 @@ galaxy watch 4 연동이 되어있는 내 개인 안드로이드 폰에서는 ex
 
 앞으로 이 부분에 대해서 어떻게 개선이 되는지 지켜보고 우선은 이 글을 끝내겠다. 
 
-업데이트 되는대로 여기에 붙이고 붙이고 붙이겠다.
+업데이트 되는대로 여기에 붙이고 붙이고 붙이겠다.  
+
+
+아래처럼 수정했다. os version이 바뀌면서 에러 메시지가 바뀔 수 있을  것 같아서다.   
+
+
+공식적으로 제공하지 않는 exception이라면, 아래처럼 처리해버리는 게 오히려 맞는 것 같다.  
+
+
+~~~kotlin
+private fun setupNodeId() {
+        try {
+            val capabilityInfo: CapabilityInfo = Tasks.await(
+                Wearable.getCapabilityClient(this)
+                    .getCapability(
+                        WEAR_CAPABILITY,
+                        CapabilityClient.FILTER_REACHABLE
+                    )
+            )
+            nodeId = pickBestNodeId(capabilityInfo.nodes)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } catch (e: CancellationException) {
+            e.printStackTrace()
+        }
+    }
+~~~
